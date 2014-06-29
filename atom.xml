@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-06-29T15:13:28+08:00</updated>
+  <updated>2014-06-29T16:40:26+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -14,11 +14,48 @@
 
   
   <entry>
+    <title type="html"><![CDATA[swift语法]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/06/29/test/"/>
+    <updated>2014-06-29T15:32:42+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/06/29/test</id>
+    <content type="html"><![CDATA[<p>Swift 是 iOS 和 OS X 应用开发的一门新语言。然而，如果你有 C 或者 Objective-C 开发经验的话，你会发现 Swift 的很多内容都是你熟悉的。</p>
+
+<p>Swift 的类型是在 C 和 Objective-C 的基础上提出的，Int是整型；Double和Float是浮点型；Bool是布尔型；String是字符串。Swift 还有两个有用的集合类型，Array和Dictionary，请参考集合类型。</p>
+
+<!--more-->
+
+
+<p>就像 C 语言一样，Swift 使用变量来进行存储并通过变量名来关联值。在 Swift 中，值不可变的变量有着广泛的应用，它们就是常量，而且比 C 语言的常量更强大。在 Swift 中，如果你要处理的值不需要改变，那使用常量可以让你的代码更加安全并且更好地表达你的意图。</p>
+
+<p>除了我们熟悉的类型，Swift 还增加了 Objective-C 中没有的类型比如元组（Tuple）。元组可以让你创建或者传递一组数据，比如作为函数的返回值时，你可以用一个元组可以返回多个值。</p>
+
+<p>Swift 还增加了可选（Optional）类型，用于处理值缺失的情况。可选表示“那儿有一个值，并且它等于 x ”或者“那儿没有值”。可选有点像在 Objective-C 中使用nil，但是它可以用在任何类型上，不仅仅是类。可选类型比 Objective-C 中的nil指针更加安全也更具表现力，它是 Swift 许多强大特性的重要组成部分。</p>
+
+<p>Swift 是一个类型安全的语言，可选就是一个很好的例子。Swift 可以让你清楚地知道值的类型。如果你的代码期望得到一个String，类型安全会阻止你不小心传入一个Int。你可以在开发阶段尽早发现并修正错误。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Swift]]></title>
     <link href="http://zhouhongmeiblog.github.io/blog/2014/06/29/swift/"/>
     <updated>2014-06-29T15:10:36+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/06/29/swift</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<p><img src="http://zhouhongmeiblog.github.io/images/2014/06/29/dream.png" alt="image" /></p>
+
+<p>Swift 是一种新的编程语言，用于编写 iOS 和 OS X 应用。Swift 结合了 C 和 Objective-C 的优点并且不受 C 兼容性的限制。Swift 采用安全的编程模式并添加了很多新特性，这将使编程更简单，更灵活，也更有趣。Swift 是基于成熟而且倍受喜爱的 Cocoa 和 Cocoa Touch 框架，它的降临将重新定义软件开发。</p>
+
+<!--more-->
+
+
+<p>Swift 的开发从很久之前就开始了。为了给 Swift 打好基础，苹果公司改进了编译器，调试器和框架结构。我们使用自动引用计数（Automatic Reference Counting, ARC）来简化内存管理。我们在 Foundation 和 Cocoa 的基础上构建框架栈并将其标准化。Objective-C 本身支持块、集合语法和模块，所以框架可以轻松支持现代编程语言技术。正是得益于这些基础工作，我们现在才能发布这样一个用于未来苹果软件开发的新语言。</p>
+
+<p>Objective-C 开发者对 Swift 并不会感到陌生。它采用了 Objective-C 的命名参数以及动态对象模型，可以无缝对接到现有的 Cocoa 框架，并且可以兼容 Objective-C 代码。在此基础之上，Swift 还有许多新特性并且支持过程式编程和面向对象编程。</p>
+
+<p>Swift 对于初学者来说也很友好。它是第一个既满足工业标准又像脚本语言一样充满表现力和趣味的编程语言。它支持代码预览，这个革命性的特性可以允许程序员在不编译和运行应用程序的前提下运行 Swift 代码并实时查看结果。</p>
+
+<p>Swift 将现代编程语言的精华和苹果工程师文化的智慧结合了起来。编译器对性能进行了优化，编程语言对开发进行了优化，两者互不干扰，鱼与熊掌兼得。Swift 既可以用于开发 “hello, world” 这样的小程序，也可以用于开发一套完整的操作系统。所有的这些特性让 Swift 对于开发者和苹果来说都是一项值得的投资。</p>
+
+<p>Swift 是编写 iOS 和 OS X 应用的极佳手段，并将伴随着新的特性和功能持续演进。我们对 Swift 充满信心，你还在等什么！</p>
 ]]></content>
   </entry>
   
