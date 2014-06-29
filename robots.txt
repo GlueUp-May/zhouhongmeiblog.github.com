@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://zhouhongmeiblog.github.io/sitemap.xml 
