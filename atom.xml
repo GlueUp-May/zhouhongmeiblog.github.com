@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-06-30T16:45:45+08:00</updated>
+  <updated>2014-06-30T17:03:40+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -18,7 +18,12 @@
     <link href="http://zhouhongmeiblog.github.io/blog/2014/06/30/gitbook/"/>
     <updated>2014-06-30T15:10:45+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/06/30/gitbook</id>
-    <content type="html"><![CDATA[<h1>序言</h1>
+    <content type="html"><![CDATA[<p><img src="http://zhouhongmeiblog.github.io/images/2014/06/29/gitbook.png" alt="image" /></p>
+
+<!--more-->
+
+
+<h1>序言</h1>
 
 <h2>文档</h2>
 
