@@ -3,18 +3,6 @@
   
   
   <url>
-    <loc>http://zhouhongmeiblog.github.io/blog/2014/06/30/swift/</loc>
-    <lastmod>2014-06-30T09:23:18+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhouhongmeiblog.github.io/blog/2014/06/29/test/</loc>
-    <lastmod>2014-06-29T15:32:42+08:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
     <loc>http://zhouhongmeiblog.github.io/blog/2014/06/29/swift/</loc>
     <lastmod>2014-06-29T15:10:36+08:00</lastmod>
     <priority>0.8</priority>
@@ -23,21 +11,21 @@
   
   <url>
     <loc>http://zhouhongmeiblog.github.io/blog/archives/</loc>
-    <lastmod>2014-06-30T12:32:59+08:00</lastmod>
+    <lastmod>2014-06-30T15:06:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://zhouhongmeiblog.github.io/</loc>
-    <lastmod>2014-06-30T12:32:59+08:00</lastmod>
+    <lastmod>2014-06-30T15:06:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://zhouhongmeiblog.github.io/blog/categories/</loc>
-    <lastmod>2014-06-30T12:32:59+08:00</lastmod>
+    <lastmod>2014-06-30T15:06:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
