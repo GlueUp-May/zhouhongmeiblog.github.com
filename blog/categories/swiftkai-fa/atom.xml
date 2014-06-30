@@ -4,7 +4,7 @@
   <title><![CDATA[Category: swift开发 | Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/blog/categories/swiftkai-fa/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-06-30T12:12:58+08:00</updated>
+  <updated>2014-06-30T12:32:59+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -66,7 +66,7 @@
     <link href="http://zhouhongmeiblog.github.io/blog/2014/06/29/swift/"/>
     <updated>2014-06-29T15:10:36+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/06/29/swift</id>
-    <content type="html"><![CDATA[<p><img src="/images/2014/06/29/dream.png" alt="image" /></p>
+    <content type="html"><![CDATA[<p><img src="/images/2014/06/29/swift.png" alt="image" /></p>
 
 <p>Swift一种编译式编程语言,由苹果公司推出,用来撰写OS X和iOS应用程序。2014年,在AppleWWDC所发布,设计Swift时,苹果公司有意让Swift与Objective-C共存在苹果公司的操作系统上。</p>
 
