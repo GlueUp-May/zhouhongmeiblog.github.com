@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-07-01T22:31:50+08:00</updated>
+  <updated>2014-07-02T14:59:49+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS真机调试]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/07/02/ioszhen-ji-diao-shi/"/>
+    <updated>2014-07-02T09:15:48+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/07/02/ioszhen-ji-diao-shi</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GitBook]]></title>
