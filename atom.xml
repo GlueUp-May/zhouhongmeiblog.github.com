@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-07-03T15:27:12+08:00</updated>
+  <updated>2014-07-03T15:47:34+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -69,7 +69,7 @@
 <li><p>在终端输入如下命令行：</p>
 
 <p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test5.png" alt="image" /></p></li>
-<li><p>在网页上输入<a href="http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html,%E5%B0%B1OK%E4%BA%86">http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html,%E5%B0%B1OK%E4%BA%86</a></p></li>
+<li><p>在网页上输入**<a href="http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html**,%E5%B0%B1OK%E4%BA%86">http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html**,%E5%B0%B1OK%E4%BA%86</a></p></li>
 </ul>
 
 
@@ -81,6 +81,12 @@
 
 
 <p> <strong>说明</strong></p>
+
+<ul>
+<li>无需iTunes，无线发布iOS App</li>
+<li>不用设备授权即可直接安装，并且不限设备上限</li>
+</ul>
+
 
 <h3>TestFlight</h3>
 
@@ -102,7 +108,7 @@
 <p><strong>说明</strong></p>
 
 <ul>
-<li>TestFlight可以收集测试过程中的Crash log，出现的bug，以及测试人员的反馈。</li>
+<li>TestFlight可以收集测试过程中的Crash log，出现的bug，以及测试人员的反馈</li>
 <li>方便在于省却了测试员和客户的繁琐操作，但程序员的任务还是一样多</li>
 <li>User会有两种角色，一种是Developer，一种是test。test就是只能安装app，而Developer可以更新新的app</li>
 <li>越狱的手机是无法通过TestFlight安装app的</li>
@@ -117,7 +123,7 @@
 
 <ul>
 <li>将安装包拖拽至发布平台 (最大支持 100MB app 文件)</li>
-<li>告诉测试人员对应生成的短链地址 (可自定义，同一个 App，有更新也会保持同一个地址，除非你想改动)，然后他们就可直接下载应用安装到手机上了。</li>
+<li>告诉测试人员对应生成的短链地址 (可自定义，同一个 App，有更新也会保持同一个地址，除非你想改动)，然后他们就可直接下载应用安装到手机上了</li>
 </ul>
 
 
