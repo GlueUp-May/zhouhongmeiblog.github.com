@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios开发 | Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/blog/categories/ioskai-fa/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-07-03T15:47:34+08:00</updated>
+  <updated>2014-07-03T17:26:13+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -18,7 +18,9 @@
     <link href="http://zhouhongmeiblog.github.io/blog/2014/07/03/distribute-app/"/>
     <updated>2014-07-03T14:10:19+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/07/03/distribute-app</id>
-    <content type="html"><![CDATA[<!--more-->
+    <content type="html"><![CDATA[<p><img src="/images/2014/07/03/iOS_Test.png" alt="image" /></p>
+
+<!--more-->
 
 
 <h3>App内测（Ad-Hoc）</h3>
@@ -69,7 +71,7 @@
 <li><p>在终端输入如下命令行：</p>
 
 <p><img src="/images/2014/07/03/test5.png" alt="image" /></p></li>
-<li><p>在网页上输入**<a href="http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html**,%E5%B0%B1OK%E4%BA%86">http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html**,%E5%B0%B1OK%E4%BA%86</a></p></li>
+<li><p>在网页上输入<code>http://您电脑ip/xxx.html</code>,就OK了</p></li>
 </ul>
 
 
@@ -164,6 +166,13 @@
 <h5>进入申请界面</h5>
 
 <p>打开<a href="https://developer.apple.com/devcenter/ios/index.action">iOS Dev Center</a></p>
+
+<h4>添加设备（Devices）</h4>
+
+<ul>
+<li>将设备连上电脑，打开在XCode的Organizer->Devices中</li>
+</ul>
+
 ]]></content>
   </entry>
   
