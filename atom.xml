@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-07-03T11:34:46+08:00</updated>
+  <updated>2014-07-03T15:27:12+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -12,6 +12,124 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS 测试解决方案]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/07/03/distribute-app/"/>
+    <updated>2014-07-03T14:10:19+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/07/03/distribute-app</id>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<h3>App内测（Ad-Hoc）</h3>
+
+<p>利用企业级开发证书和提供简单网页服务器搭建文件以及相关技术文档，把文件上传到您的网站，就可以是越狱和非越狱用户在iphone或者ipad上在线直接安装APP软件!</p>
+
+<h4>发布流程：</h4>
+
+<ul>
+<li><p>设置签名</p>
+
+<p>利用developer profile或者adhoc distribution profile签名app，注意，不能使用distribution profile方式签名，经过测试，是无法安装的。其中原因个人认为developer profile和adhoc distribution profile都可以指定设备，跟之前了解到的，个人开发者证书只能在100个设备中实现无线安装是一致的。</p></li>
+<li><p>生成arichive</p>
+
+<p>菜单：product->build for->arichiving，然后product->archive，完成后可以在organizer中看到生成的arichive。</p></li>
+<li><p>生成ipa</p>
+
+<p>选择刚刚生成的arichive，点击“Distribute&hellip;&ldquo;，弹出如下图界面，选择第二个：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test.png" alt="image" /></p>
+
+<p>选择后点“next”，设置相关参数，如下图：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test1.png" alt="image" /></p>
+
+<ul>
+<li>一定要勾选“save for enterprise distribution”，简单解释一下各个参数。</li>
+<li>application url,是生成的ipa在服务器的位置；title是安装过程中出现的标题；subtitle暂时不清楚做何用处；large image url 和 smal image url是 安装过程中出现的图标。</li>
+<li>点击保存，将生成两个文件：myApp.ipa和myApp.plist。</li>
+</ul>
+</li>
+<li><p>服务器部署</p>
+
+<p>将myApp.ipa和myApp.plist部署到自己服务器，同时在服务器生成一个html文件，目的是点击后打开一个链接，这样ios设备就会执行指令自动安装app了。</p>
+
+<p>mac电脑搭建服务器：</p>
+
+<ul>
+<li><p>在mac电脑找到服务器的路径</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test2.png" alt="image" /></p></li>
+<li><p>打开Documents如下：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test3.png" alt="image" /></p></li>
+<li><p>把三个文件放到Documents就可以了：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test4.png" alt="image" /></p></li>
+<li><p>在终端输入如下命令行：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/07/03/test5.png" alt="image" /></p></li>
+<li><p>在网页上输入<a href="http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html,%E5%B0%B1OK%E4%BA%86">http://%E6%82%A8%E7%94%B5%E8%84%91ip/xxx.html,%E5%B0%B1OK%E4%BA%86</a></p></li>
+</ul>
+
+
+<p>在html要打开连接内容地址：</p>
+
+<pre><code>itms-services://?action=download-manifest&amp;url=http://192.168.5.7:8080/myApp.plist
+</code></pre></li>
+</ul>
+
+
+<p> <strong>说明</strong></p>
+
+<h3>TestFlight</h3>
+
+<p>Testflight是移动团队必备的测试工具</p>
+
+<h4>发布流程:</h4>
+
+<ul>
+<li>首先，需要在<a href="https://testflightapp.com">https://testflightapp.com</a>上注册一个账号</li>
+<li>然后创建一个team（项目）后邀请一个email</li>
+<li>对方在手机上使用safari打开email里的邀请链接，注册一个账号，或登录。对方在手机上一步一步继续按照提示，会要求在手机的设置里安装一个证书。最后这样就是接受了要求。</li>
+<li>而你的email里，或在控制面板上可以知道对方的串号。</li>
+<li>接着在开发者账号里添加这个串号，重新打包ipa。</li>
+<li>在TestFlight的Build界面update，上传这个ipa，并且选择相应的user，选择更新。</li>
+<li>最后对方在手机上就可以直接收到提示有新的app，点击安装即可。</li>
+</ul>
+
+
+<p><strong>说明</strong></p>
+
+<ul>
+<li>TestFlight可以收集测试过程中的Crash log，出现的bug，以及测试人员的反馈。</li>
+<li>方便在于省却了测试员和客户的繁琐操作，但程序员的任务还是一样多</li>
+<li>User会有两种角色，一种是Developer，一种是test。test就是只能安装app，而Developer可以更新新的app</li>
+<li>越狱的手机是无法通过TestFlight安装app的</li>
+</ul>
+
+
+<h3>FIR.IM</h3>
+
+<p>FIR是一个免费App托管平台, 全名 Fly It Remotely. 可以2步简单发布应用程序, 极大简化了App内测(Ad-Hoc)的过程.</p>
+
+<h4>发布流程：</h4>
+
+<ul>
+<li>将安装包拖拽至发布平台 (最大支持 100MB app 文件)</li>
+<li>告诉测试人员对应生成的短链地址 (可自定义，同一个 App，有更新也会保持同一个地址，除非你想改动)，然后他们就可直接下载应用安装到手机上了。</li>
+</ul>
+
+
+<p><strong>说明</strong></p>
+
+<ul>
+<li>开发者也可在手机上打开 FIR 主页，直接提交已经上线至 App Store 的应用链接，上传成功后也会显示 App 的基本信息，包括版本、图标、更新日期等</li>
+<li>测试人员也不用去下个专门获取 UDID 的应用，直接用 Safari 打开 fir.im 主页就可以了</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS真机调试]]></title>
@@ -22,6 +140,24 @@
 
 <!--more-->
 
+
+<h1>准备工作</h1>
+
+<h5>苹果真机调试需要证书（<strong>Certificates</strong>）和描述文件（<strong>Provisioning Profiles</strong>）</h5>
+
+<ol>
+<li>证书（<strong>Certificates</strong>）: 通过苹果系统自带的<strong>钥匙串</strong>生成后上传到<strong>Developer</strong>中在生成来完成</li>
+<li>描述文件（<strong>Provisioning Profiles</strong>）生成描述文件时需要选择App ID、证书（<strong>Certificates</strong>）、 设备（<strong>Devices</strong>）</li>
+</ol>
+
+
+<p><em>App ID 包含Bundle，必须与你程序的bundle保持一致，为了能同时调试多个程序，一般bundle填写时末尾</em><em>*用号代替</em></p>
+
+<p><em>App ID,证书,描述文件,设备,以及你所要调试程序的Bundle Identifier保持一致</em></p>
+
+<h5>进入申请界面</h5>
+
+<p>打开<a href="https://developer.apple.com/devcenter/ios/index.action">iOS Dev Center</a></p>
 ]]></content>
   </entry>
   

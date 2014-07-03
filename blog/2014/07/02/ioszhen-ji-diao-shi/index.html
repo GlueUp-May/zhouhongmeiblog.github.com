@@ -9,7 +9,8 @@
 	<meta name="author" content="maebook">
 
 	
-	<meta name="description" content="iOS真机调试 Comments var duoshuoQuery = {short_name:"zhouhongmei"}; (function() { var ds = document.createElement('script'); ds.type = 'text/javascript &hellip;">
+	<meta name="description" content="iOS真机调试 准备工作 苹果真机调试需要证书（Certificates）和描述文件（Provisioning Profiles） 证书（Certificates）: 通过苹果系统自带的钥匙串生成后上传到Developer中在生成来完成
+描述文件（Provisioning Profiles） &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +93,24 @@
 
 <!--more-->
 
+
+<h1>准备工作</h1>
+
+<h5>苹果真机调试需要证书（<strong>Certificates</strong>）和描述文件（<strong>Provisioning Profiles</strong>）</h5>
+
+<ol>
+<li>证书（<strong>Certificates</strong>）: 通过苹果系统自带的<strong>钥匙串</strong>生成后上传到<strong>Developer</strong>中在生成来完成</li>
+<li>描述文件（<strong>Provisioning Profiles</strong>）生成描述文件时需要选择App ID、证书（<strong>Certificates</strong>）、 设备（<strong>Devices</strong>）</li>
+</ol>
+
+
+<p><em>App ID 包含Bundle，必须与你程序的bundle保持一致，为了能同时调试多个程序，一般bundle填写时末尾</em><em>*用号代替</em></p>
+
+<p><em>App ID,证书,描述文件,设备,以及你所要调试程序的Bundle Identifier保持一致</em></p>
+
+<h5>进入申请界面</h5>
+
+<p>打开<a href="https://developer.apple.com/devcenter/ios/index.action">iOS Dev Center</a></p>
 </div>
 
 </article>
