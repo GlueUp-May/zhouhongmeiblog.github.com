@@ -100,17 +100,76 @@
 
 <ol>
 <li>证书（<strong>Certificates</strong>）: 通过苹果系统自带的<strong>钥匙串</strong>生成后上传到<strong>Developer</strong>中在生成来完成</li>
-<li>描述文件（<strong>Provisioning Profiles</strong>）生成描述文件时需要选择App ID、证书（<strong>Certificates</strong>）、 设备（<strong>Devices</strong>）</li>
+<li><p>描述文件（<strong>Provisioning Profiles</strong>）生成描述文件时需要选择App ID、证书（<strong>Certificates</strong>）、 设备（<strong>Devices</strong>）</p>
+
+<pre><code>App ID 包含Bundle，必须与你程序的bundle保持一致，为了能同时调试多个程序，一般bundle填写时末尾*用号代替
+App ID,证书,描述文件,设备,以及你所要调试程序的Bundle Identifier保持一致
+</code></pre></li>
 </ol>
 
 
-<p><em>App ID 包含Bundle，必须与你程序的bundle保持一致，为了能同时调试多个程序，一般bundle填写时末尾</em><em>*用号代替</em></p>
-
-<p><em>App ID,证书,描述文件,设备,以及你所要调试程序的Bundle Identifier保持一致</em></p>
-
 <h5>进入申请界面</h5>
 
-<p>打开<a href="https://developer.apple.com/devcenter/ios/index.action">iOS Dev Center</a></p>
+<p>打开<a href="https://developer.apple.com/devcenter/ios/index.action">iOS Dev Center</a>,选择Sign in，登陆（至少99美元账号），登陆之后在网页右边找到iOS Developer Program,选择Certificates，Identifiers &amp; Profiles，选择Identifiers</p>
+
+<p><img src="/images/2014/07/02/1.png" alt="image" /></p>
+
+<h5>添加App ID</h5>
+
+<p>选择Identifiers->App IDs,在右侧选择添加按钮添加</p>
+
+<p><img src="/images/2014/07/02/2.png" alt="image" /></p>
+
+<p>App ID由用.符号分开的两部分组成，在默认情况下，App ID的前缀为你的团队ID，后缀被定义为一个bundle ID的搜索字符串，AppID的每一个部分对你的应用程序都有不同而且很重要的用途</p>
+
+<ul>
+<li>App ID Description：这部分只是你ID的一个代号，只需填写一个自己能分辨的名称即可，在后面申请证书和描述文件中会涉及到选择项</li>
+</ul>
+
+
+<p><img src="/images/2014/07/02/3.png" alt="image" /></p>
+
+<ul>
+<li>App ID Prefix：这部分是Team ID，系统默认，无需填写</li>
+<li><p>App ID Suffix：这部分是App ID后缀，可选择Explicit App ID或者Wildcard App ID</p>
+
+<ul>
+<li>Explicit App ID</li>
+</ul>
+
+
+<p>Explicit App ID：如果你打算将应用程序中加入Game Center，或在应用中使用应用内购买，进行数据保护，使用iCloud，或者想要给你的应用程序一个唯一的配置文件，你就必须申请Explicit App ID。</p>
+
+<p>要创建Explicit App ID，在下面的框中输入一个唯一的字符串，这个字符串必须与你的应用程序的Bundle ID匹配，苹果推荐使用 com.你的公司名称.app名称作为你的Bundle ID，如果是选择Explicit App ID，Bundle ID中 不能含有*号</p>
+
+<p><img src="/images/2014/07/02/4.png" alt="image" /></p>
+
+<ul>
+<li>Wildcard App ID：通用App ID，只需使用com.oschina.*的格式即可匹配多个应用，本文以通用型为例</li>
+</ul>
+
+
+<p>Wildcard App ID：可以让你用一个App ID来匹配多个App，想要创建一个通用App ID，在输入Bundle ID末尾使用*号</p>
+
+<p><img src="/images/2014/07/02/5.png" alt="image" /></p></li>
+<li><p>App Services：应用程序提供的服务</p>
+
+<p>App Services：选择你应用中将会使用的服务，在App ID注册成功之后也可再次编辑你的选择在自己应用中所使用到的选项上打√，因为我选择的是通用型（WildCard)，所以Game Center，In-App Purchase， Push Notifications都是不可选的，如果要使用这些功能，请选择精确型(Explicit)</p>
+
+<p><img src="/images/2014/07/02/6.png" alt="image" /></p></li>
+</ul>
+
+
+<p>完成上面的填写之后，选择Continue</p>
+
+<ul>
+<li><p>确认信息</p>
+
+<p><img src="/images/2014/07/02/7.png" alt="image" /></p>
+
+<p>确认之后选择Submit，出现Registration complete.的字样，选择Done即可</p></li>
+</ul>
+
 
 <h4>添加设备（Devices）</h4>
 
