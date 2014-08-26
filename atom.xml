@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-08-26T14:26:56+08:00</updated>
+  <updated>2014-08-26T14:29:35+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -19,6 +19,9 @@
     <updated>2014-07-23T13:59:37+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/07/23/zipya-suo-he-jie-ya-suo</id>
     <content type="html"><![CDATA[<p>这篇文章我将演示如何在你的ios应用程序内部压缩和解压缩文件。我们将使用第三方库称为ZipArchive做到这点。虽然有几个解决方案压缩和解压缩文件，我觉得ZipArchive库是最快、最容易方式运行。</p>
+
+<!--more-->
+
 
 <h3>为什么我要解压缩文件</h3>
 
