@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-08-26T14:29:35+08:00</updated>
+  <updated>2014-08-26T14:32:17+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -23,23 +23,23 @@
 <!--more-->
 
 
-<h3>为什么我要解压缩文件</h3>
+<h2>为什么我要解压缩文件</h2>
 
 <p>这是个好问题。有许多原因为什么在你的应用想要支持压缩和解压缩。这里有些原因：</p>
 
-<h4>苹果App Store的50M下载限制</h4>
+<h3>苹果App Store的50M下载限制</h3>
 
 <p>苹果公司出于流量的考虑，规定在非WIFI环境下，限制用户只能下载小于50M的应用或游戏。这样一来，对于一些数据或数据包较大的应用，我们只能尽量减小 应用二进制包的体积。而把数据打包到zip中，这样App可以通过网络下载数据包，解压出所需要的内容，而且这样也可以动态的更新内容。</p>
 
-<h4>动态更新内容</h4>
+<h3>动态更新内容</h3>
 
 <p>这一点在上面已经提过了。如果应用所需要的资源需要动态更新，一种常见的做法是更新资源，重新打包，重新提交到App store，这样做你需要等待漫长的审核、上架时间。一般情况下是一周左右的时间。更好的方法是将这些资源打包放置在服务器上，App从服务器（或者云存储上下载，然后解压。这样做的好处显而易见，那就是可以快速更新，动态更新，不需要重新打包、上传、审核，省时省力。</p>
 
-<h4>从web上下载zip文件</h4>
+<h3>从web上下载zip文件</h3>
 
 <p>Safari和邮件程序都不支持zip的查看，通过ZipArchive你就可以为你的设备增加查看zip文件的能力了，尽管App Store里已经有一些App支持这些功能了。</p>
 
-<h4>建立工程</h4>
+<h3>建立工程</h3>
 
 <p>首先从google code上check out一份代码，svn地址是：<a href="http://ziparchive.googlecode.com/svn/trunk/ziparchive-read-only">http://ziparchive.googlecode.com/svn/trunk/ziparchive-read-only</a></p>
 
@@ -56,7 +56,7 @@
 
 <p>至此，ZipArchive已经集成到你的工程中了，编译工程，应该可以编译成功。可能会有一些警告，这无关紧要，不影响编译。但是作为一个态度严谨的程序员，我强烈建议你看一下这些警告是怎么出现的，解决它们。请记住：在你的工程中，警告应该和错误一样被严肃处理</p>
 
-<h4>下载和解压缩文件</h4>
+<h3>下载和解压缩文件</h3>
 
 <p>接下来就向大家展示在你的工程中如何从网上下载zip文件，解压缩，并读取zip压缩包中的文件内容。处于演示考虑，主要的目的是向大家演示
 ZipArchive接口的使用方法，所以代码的错误处理和条件检查并没有做过多的考量，在实际的工程中，还是需要大家自己做更为严格的条件检查和错误处 理工作。</p>
@@ -65,11 +65,11 @@ ZipArchive接口的使用方法，所以代码的错误处理和条件检查并�
 
 <p>好，接下来讲一讲具体的实现：</p>
 
-<h5>引入ZipArchive的头文件</h5>
+<h4>引入ZipArchive的头文件</h4>
 
 <p> import &ldquo;ZipArchive.h&rdquo;</p>
 
-<h5>下载zip文件</h5>
+<h4>下载zip文件</h4>
 
 <pre><code>dispatch_queue_t queue = dispatch_get_global_queue(
     DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -109,7 +109,7 @@ ZipArchive接口的使用方法，所以代码的错误处理和条件检查并�
 
 <p>现在zip文件已经下载下来了，接下来就是要解压缩，并将解压缩出来的文件利用起来。</p>
 
-<h5>解压缩已下载的zip文件</h5>
+<h4>解压缩已下载的zip文件</h4>
 
 <p>在第二步中，我们已经把zip文件下载到/Library/Caches/zipfile.zip，现在来解压缩。</p>
 
@@ -147,7 +147,7 @@ dispatch_async(dispatch_get_main_queue(), ^{
 </ul>
 
 
-<h4>压缩文件</h4>
+<h3>压缩文件</h3>
 
 <p>接下来看一下怎么进行文件压缩。在上面的步骤中，我们已经把一个zip文件解压缩到缓存目录中。现在我们再把解压缩出来的文件重新压缩为一个zip文件，并把这个zip文件写入到Documents目录里去（OMG，这两个文件太惨了，被反复蹂躏）</p>
 
