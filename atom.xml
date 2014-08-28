@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-08-28T10:18:16+08:00</updated>
+  <updated>2014-08-28T10:20:15+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -18,7 +18,10 @@
     <link href="http://zhouhongmeiblog.github.io/blog/2014/08/26/iosxue-xi-bi-ji-%5Bnil%5Dkai-yuan-kuang-jia-he-lei/"/>
     <updated>2014-08-26T17:57:35+08:00</updated>
     <id>http://zhouhongmeiblog.github.io/blog/2014/08/26/iosxue-xi-bi-ji-[nil]kai-yuan-kuang-jia-he-lei</id>
-    <content type="html"><![CDATA[<ul>
+    <content type="html"><![CDATA[<!--more-->
+
+
+<ul>
 <li><p>SDWebImage,UIImageView+WebCache加载一张图片。</p></li>
 <li><p>UIViewExt用于定位坐标系统很有用。可以直接拿到bottom，top，left，right</p></li>
 <li>CustomCatagory,是个类目，里面有navigationBar和UINavigationController的两种系统版本下自定义navigationBar背景图片方法，用于自定义navigationBar背景图片。</li>
