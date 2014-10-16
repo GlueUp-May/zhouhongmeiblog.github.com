@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-08-29T09:47:21+08:00</updated>
+  <updated>2014-10-16T16:00:56+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -12,6 +12,215 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[iOS8界面布局和适配]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/10/16/ios8jie-mian-bu-ju-he-gua-pei/"/>
+    <updated>2014-10-16T15:46:39+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/10/16/ios8jie-mian-bu-ju-he-gua-pei</id>
+    <content type="html"><![CDATA[<h2>一 基本概念：</h2>
+
+<p>我们知道，一款iOS应用，其主要UI组件是由一个个相对独立的可视单元构成，这些可视单元有的主要负责向用户输出有用的信息，有些则负责信息的输入（交互），交互的过程中往往还伴随有动画的效果，已达到整个信息传递的连贯性以及用户体验的细腻感。可视单元，在实际开发中主要是view、button等，那么这些可视单元的关系由两个基本的关系构成：兄弟关系和父子关系，整个视图单元就是一个树形结构：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/1.png" alt="image" />
+对于任何一个UI组件，确定了它的（相对于父view）位置、大小也就确定了它在整个UI视图中的展示效果。
+在iPad和iPhone 5出现之前，iOS设备就只有一种尺寸。我们在做屏幕适配时需要考虑的仅仅有设备方向而已。而很多应用并不支持转向，这样的话就完全没有屏幕适配的工作了。随着iPhone6、plus的发布，屏幕尺寸有了越来越多中可能，未来不排除更多尺寸的iPhone发布出来，这就要求我们的APP的UI元素具有在屏幕尺寸不同的设备上具有一定动态的可调性，已实现较好的UI展示效果。从目前苹果提供的技术来看，有下、中、上三种实现方法：
+下策是，代码中判断当前设备的尺寸，对UI元素进行手工的调整，其缺点是显而易见的：代码复杂、容易出错、且维护难度大、灵活性极差；
+ 中策是，通过设置可视单元（UIView UIButton&hellip;）的autoresizing属性，预设当该view所在的环境（父view）发生变化时它的尺寸和位置应该如何调整，该方法可以在Xcode的interface builder中（storyboard 或者 xib）设置完成，但其只能针对父子关系进行有限的调整，比如左边距是否固定，尺寸是否可变等，而对于兄弟关系的调整则无法实现，对于UI比较固定的APP这种调节方式也算基本满足需求；
+上策就是结合使用autolayout和sizeclass对UI可视单元的父子关系、兄弟关系进行全方位的调整，而且调节精度更高：不仅能确定一个view的位置尺寸的变化依据是什么，还能对这些依据加以不同的优先级，先满足什么条件，再满足什么条件，对于重要的位置尺寸可以优先保证，这样整个APP就具有极强的动态可调性，满足不同设备、不同应用场景下的需求。</p>
+
+<h2>二 关于自动布局（Autolayout）</h2>
+
+<p>在iOS7之前，为一个应用，特别是universal的应用制作UI时，我们总会首先想我们的目标设备的长宽各是多少，方向变换以后布局又应该怎么改变，然后进行布局。iOS6引入了AutoLayout来帮助开发者使用约束进行布局，这使得在某些情况下我们不再需要考虑尺寸，而可以专注于使用约束来规定位置。
+Autolayout的作用非常明确：帮我们确定在不同设备、不同（父view）环境下，同一个可视单元所应具有合适的位置和尺寸，因此，当一个UIView上所施加的约束能够唯一确定它的frame（x, y, width, height）的时候我们的自动布局的使用才是正确的。而新手通常犯的两类错误就是约束不足（约束太少）和约束冲突两种（约束太多）。如果你给出的约束只能够确定这个view的大小，或者位置或者位置中的某一个项（比如x）的时候，就会出现约束不足的情况，在xib或者storyboard中，会以黄色的警告出现在左侧提示框内；如果你给出的约束推导出了两个甚至多个互相矛盾的位置尺寸结果的时候，就产生了布局错误，在编译的时候直接就build不过。
+既然我们有了AutoLayout，那么其实通过约束来指定视图的位置和尺寸是没有什么问题的了，从这个方面来说，屏幕的具体的尺寸和方向已经不那么重要了。但是实战中这还不够，AutoLayout正如其名，只是一个根据约束来进行布局的方案，而在对应不同设备的具体情况下的体验上还有欠缺。一个最明显的问题是它不能根据设备类型来确定不同的交互体验。很多时候你还是需要判断设备到底是iPhone还是iPad，以及现在的设备方向究竟是竖直还是水平来做出判断。这样的话我们还是难以彻底摆脱对于设备的判断和依赖，而之后如果有新的尺寸和设备出现的话，这种依赖关系显然显得十分脆弱的（想想要是有iWatch的话..）。</p>
+
+<p>所以在iOS8里，Apple从最初的设计哲学上将原来的方式推翻了，并引入了一整套新的理念，来适应设备不断的发展。这就是SizeClasses。</p>
+
+<h2>三 关于iOS8新增的sizeclass属性</h2>
+
+<p>对于任何设备来说，界面的宽度和高度都只分为两种描述：正常和紧凑。这样开发者便可以无视设备具体的尺寸，而是对这两类和它们的组合进行适配。这样不论在设计时还是代码上，我们都可以不再受限于具体的尺寸，而是变成遵循尺寸的视觉感官来进行适配。在Xcode中的具体体现如下图：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/2.png" alt="image" />
+但是我们看到图中的宽度和高度都是Any,Any是什么意思呢？如果weight设为Any，height设置为Regular，那么在该状态下的界面元素在只要height为Regular，无论weight是Regular还是Compact的状态中都会存在。这种关系应该叫做继承关系，具体的四种界面描述与可继承的界面描述如下：</p>
+
+<ul>
+<li><p> w:Compact h:Compact 继承 (w:Any h:Compact , w:Compact h:Any , w:Any h:Any)</p></li>
+<li><p> w:Regular h:Compact 继承 (w:Any h:Compact , w:Regular h:Any , w:Any h:Any)</p></li>
+<li><p> w:Compact h:Regular 继承 (w:Any h:Regular , w:Compact h:Any , w:Any h:Any)</p></li>
+<li><p> w:Regular h:Regular 继承 (w:Any h:Regular , w:Regular h:Any , w:Any h:Any)</p></li>
+</ul>
+
+
+<p>我们知道了iOS 8下面设备界面可以描述为4种，但是这么多设备(iPhone4S,iPhone5/5s,iPhone6,iPhone6 Plus,iPad,Apple Watch)具体对应什么描述呢？经过查看官方文档和具体实践得知具体对应关系如下:</p>
+
+<ul>
+<li><p> iPhone4S,iPhone5/5s,iPhone6</p>
+
+<ul>
+<li>竖屏：(w:Compact h:Regular)</li>
+</ul>
+</li>
+<li><p> 横屏：(w:Compact h:Compact)</p></li>
+<li><p> iPhone6 Plus</p>
+
+<ul>
+<li>竖屏：(w:Compact h:Regular)</li>
+</ul>
+</li>
+<li><p> 横屏：(w:Regular h:Compact)</p></li>
+<li><p> iPad</p>
+
+<ul>
+<li>竖屏：(w:Regular h:Regular)</li>
+</ul>
+</li>
+<li><p> 横屏：(w:Regular h:Regular)</p></li>
+<li><p> Apple Watch(猜测)</p>
+
+<ul>
+<li>竖屏：(w:Compact h:Compact)</li>
+</ul>
+</li>
+<li><p> 横屏：(w:Compact h:Compact)</p></li>
+</ul>
+
+
+<h2>四 Size Classes手写代码</h2>
+
+<p>为了表征Size Classes，Apple在iOS8中引入了一个新的类，UITraitCollection。这个类封装了像水平和竖直方向的Size Class等信息。iOS8的UIKit中大多数UI的基础类(包括UIScreen,UIWindow,UIViewController和UIView)都实现了UITraitEnvironment这个接口，通过其中的traitCollection这个属性，我们可以拿到对应的UITraitCollection对象，从而得知当前的Size Class，并进一步确定界面的布局。和UIKit中的响应者链正好相反，traitCollection将会在view hierarchy中自上而下地进行传递。对于没有指定traitCollection的UI部件，将使用其父节点的traitCollection。这在布局包含childViewController的界面的时候会相当有用。在UITraitEnvironment这个接口中另一个非常有用的是-traitCollectionDidChange:。在traitCollection发生变化时，这个方法将被调用。在实际操作时，我们往往会在ViewController中重写-traitCollectionDidChange:或者-willTransitionToTraitCollection:withTransitionCoordinator:方法(对于ViewController来说的话，后者也许是更好的选择，因为提供了转场上下文方便进行动画；但是对于普通的View来说就只有前面一个方法了)，然后在其中对当前的traitCollection进行判断，并进行重新布局以及动画。代码看起来大概会是这个样子：</p>
+
+<ul>
+<li>(void)willTransitionToTraitCollection:(UITraitCollection *)newCollection
+            withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
+{
+  [super willTransitionToTraitCollection:newCollection
+              withTransitionCoordinator:coordinator];
+  [coordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context)
+  {
+      if (newCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+          //To Do: modify something for compact vertical size
+      } else {
+          //To Do: modify something for other vertical size
+      }
+      [self.view setNeedsLayout];
+  } completion:nil];
+}</li>
+</ul>
+
+
+<p>在两个To Do处，我们要手写代码针对不同的状态做调整。</p>
+
+<h2>五 Size Classes与Interface Builder</h2>
+
+<p>Xcode6中Interface Builder对Size Class有了很强大的支持，xib中可以开启Size Classes如下图：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/3.png" alt="image" /></p>
+
+<p>在不同的Size Classes描述下，界面元素可以选择安装还是不安装，具体操作如图：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/4.png" alt="image" /></p>
+
+<p>在现在的 IB 界面的正下方，你可以看到一个 wAny hAny 的按钮，这代表现在的 IB 是对应任意高度和任意宽度的。点击后便可以选择需要为哪种 Size Class 进行编辑。默认情况在 Any Any 下的修改会对任意设备和任意方向生效，而如果先进行选择后再进行编辑，就表示编辑只对选中的设定生效。这样我们就很容易在同一个 storyboard 文件里对不同的设备进行适配：按照设备需要添加或者编辑某些约束，或者是在特定尺寸下隐藏某些 view (使用 Attribute Inspector 里的 Installed 选框的加号添加)。这使得使用 IB 制作通用程序变简单了，我们不再需要为 iPhone 和 iPad 准备两套 storyboard 了。</p>
+
+<h2>六 storyboard中autolayout和size class的无敌配合</h2>
+
+<p>对Xcode的interface builder比较熟悉的童鞋应该对UIButton的超强定制性映像深刻：通过选择button的不同状态（normal、height、disabled&hellip;），我们可以单独设置每一种状态，button的background image、image、text color等属性，见下图：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/5.png" alt="image" /></p>
+
+<p>而Xcode6中对自动布局的重大变更有异曲同工之妙：开发者可以根据实际需要，针对size class的九种组合中的某一种或几种分别进行自动布局的设置，这样，当APP运行于不同屏幕、不同旋转方向的时候，就可以根据当前环境的size class情况使用我们预先设置好的布局信息，从而达到APP UI的极大灵活性。</p>
+
+<p>和设置UIButton的不同状态的不同属性类似，我们首先选择一种size class，然后针对该种size class进行自动布局。下面我们以一个简单的布局场景为例进行说明：</p>
+
+<p>假设，我们想实现下面这个效果：横屏和竖屏头像和label都能正常的现实，且在“比较恰当”的位置：显然横屏的时候，高度处于压缩的状态，（height: compact），我们需要先对正常的布局之外，还要添加一种（wAny, hCompact）size class的布局：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/10/16/6.png" alt="image" /></p>
+
+<p>首先，我们对默认的sizeclass进行布局，确定头像和label的位置和尺寸：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/10/16/7.png" alt="image" /></p>
+
+<p>设置完（wAny hAny）之后，点击wAny hAny文字（上图底部），选择（wAny hCompact）：注意点击后弹出一个九宫格浮框，拖动鼠标即可选择响应的size class，注意在右下角（红色方框表示），还可以选择是否install，如果取消勾选，则这个头像在当前size class下就不会被加载（自然也就不显示出来）。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/10/16/8.png" alt="image" /></p>
+
+<p>在新的size class下我们开始添加新的布局，注意，这里并没有覆盖上一种size class我们定义好了得布局，知识针对当前的size class添加新的、独立的布局信息，狡兔三窟，Xcode6这下子一口气给了我们九个窟窿，爽！
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/9.png" alt="image" /></p>
+
+<p>布局完毕，运行起来，即可达到我们想要的效果！</p>
+
+<h2>七 Size Classes与Image Asset</h2>
+
+<p>Xcode6中Image Asset也支持了Size Class,也就是说,我们可以对不同的Size Class指定不同的图片了。在Image Asset的编辑面板中选择某张图片，Inspector里现在多了一个Width和Height的组合，添加我们需要对应的Size Class，然后把合适的图拖上去，这样在运行时SDK就将从中挑选对应的Size的图进行替换了。支持Size Class的Image Asset编辑效果如下：
+<img src="http://zhouhongmeiblog.github.io/images/2014/10/16/10.png" alt="image" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iOS引导效果]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/09/18/iosyin-dao-xiao-guo/"/>
+    <updated>2014-09-18T09:38:56+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/09/18/iosyin-dao-xiao-guo</id>
+    <content type="html"><![CDATA[<p>Onboard只用几行代码让开发者以快速、简捷方式去创造漂亮、吸引人、实用的引导效果。</p>
+
+<h2>用法</h2>
+
+<h3>Cocoapods</h3>
+
+<h2>指南</h2>
+
+<p>拖入<code>OnboardingViewController</code>和<code>OnboardingContentViewController</code>头文件和实现文件到项目中，在你的<code>AppDelegate</code>中导入，你将会给用户创造一个极好的引导效果。</p>
+
+<h3>Objective-C</h3>
+
+<pre><code>OnboardingContentViewController *firstPage = [[OnboardingContentViewController alloc] initWithTitle:@"Page Title" body:@"Page body goes here." image:[UIImage imageNamed:@"icon"] buttonText:@"Text For Button" action:^{
+// do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+}];
+</code></pre>
+
+<h3>Swift</h3>
+
+<pre><code>let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "Page Title", body: "Page Body.", image: UIImage(named: "icon"), buttonText: "Button Text") {
+// do something here when the user presses the button
+}
+</code></pre>
+
+<p>然后创建</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/onboard_demo.gif" alt="image" /></p>
+
+<h2>自定制</h2>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/key.png" alt="image" /></p>
+
+<h2>模糊和遮罩</h2>
+
+<h2>样例</h2>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/space1.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/space2.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/space3.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/space4.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/purple1.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/purple2.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/purple3.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/purple4.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/yellow1.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/yellow2.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/yellow3.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/yellow4.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/city1.png" alt="image" />
+<img src="http://zhouhongmeiblog.github.io/images/2014/09/18/city2.png" alt="image" /></p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/09/18/city3.png" alt="image" /></p>
+
+<h2>注意</h2>
+
+<p>由于目前不支持水平方向引导，所以我建议使用的它应用是仅仅支持竖直方向或者封装它的是一个支持竖直方向<code>UINavigationContoller</code>的子类。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS学习笔记－开源框架和类]]></title>

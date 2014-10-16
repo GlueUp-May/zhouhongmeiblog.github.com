@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ios翻译 | Mae Blog]]></title>
+  <link href="http://zhouhongmeiblog.github.io/blog/categories/iosfan-yi/atom.xml" rel="self"/>
+  <link href="http://zhouhongmeiblog.github.io/"/>
+  <updated>2014-10-16T16:00:56+08:00</updated>
+  <id>http://zhouhongmeiblog.github.io/</id>
+  <author>
+    <name><![CDATA[maebook]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[iOS引导效果]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/09/18/iosyin-dao-xiao-guo/"/>
+    <updated>2014-09-18T09:38:56+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/09/18/iosyin-dao-xiao-guo</id>
+    <content type="html"><![CDATA[<p>Onboard只用几行代码让开发者以快速、简捷方式去创造漂亮、吸引人、实用的引导效果。</p>
+
+<h2>用法</h2>
+
+<h3>Cocoapods</h3>
+
+<h2>指南</h2>
+
+<p>拖入<code>OnboardingViewController</code>和<code>OnboardingContentViewController</code>头文件和实现文件到项目中，在你的<code>AppDelegate</code>中导入，你将会给用户创造一个极好的引导效果。</p>
+
+<h3>Objective-C</h3>
+
+<pre><code>OnboardingContentViewController *firstPage = [[OnboardingContentViewController alloc] initWithTitle:@"Page Title" body:@"Page body goes here." image:[UIImage imageNamed:@"icon"] buttonText:@"Text For Button" action:^{
+// do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+}];
+</code></pre>
+
+<h3>Swift</h3>
+
+<pre><code>let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "Page Title", body: "Page Body.", image: UIImage(named: "icon"), buttonText: "Button Text") {
+// do something here when the user presses the button
+}
+</code></pre>
+
+<p>然后创建</p>
+
+<p><img src="/images/2014/09/18/onboard_demo.gif" alt="image" /></p>
+
+<h2>自定制</h2>
+
+<p><img src="/images/2014/09/18/key.png" alt="image" /></p>
+
+<h2>模糊和遮罩</h2>
+
+<h2>样例</h2>
+
+<p><img src="/images/2014/09/18/space1.png" alt="image" />
+<img src="/images/2014/09/18/space2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/space3.png" alt="image" />
+<img src="/images/2014/09/18/space4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/purple1.png" alt="image" />
+<img src="/images/2014/09/18/purple2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/purple3.png" alt="image" />
+<img src="/images/2014/09/18/purple4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/yellow1.png" alt="image" />
+<img src="/images/2014/09/18/yellow2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/yellow3.png" alt="image" />
+<img src="/images/2014/09/18/yellow4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/city1.png" alt="image" />
+<img src="/images/2014/09/18/city2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/city3.png" alt="image" /></p>
+
+<h2>注意</h2>
+
+<p>由于目前不支持水平方向引导，所以我建议使用的它应用是仅仅支持竖直方向或者封装它的是一个支持竖直方向<code>UINavigationContoller</code>的子类。</p>
+]]></content>
+  </entry>
+  
+</feed>

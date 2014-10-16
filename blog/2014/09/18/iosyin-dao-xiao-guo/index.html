@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Categories - Mae Blog</title>
+	<title>iOS引导效果 - Mae Blog</title>
 	<meta name="author" content="maebook">
 
 	
-	<meta name="description" content=" Swift开发 [ 1 ] 文档翻译 [ 1 ] Ios开发 [ 2 ] Ios翻译 [ 1 ] ">
+	<meta name="description" content="iOS引导效果 Onboard只用几行代码让开发者以快速、简捷方式去创造漂亮、吸引人、实用的引导效果。 用法 Cocoapods 指南 拖入OnboardingViewController和OnboardingContentViewController头文件和实现文件到项目中， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="Mae Blog" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://zhouhongmeiblog.github.io/blog/categories/">
+	<link rel="canonical" href="http://zhouhongmeiblog.github.io/blog/2014/09/18/iosyin-dao-xiao-guo/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -87,25 +87,87 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="page">
-    
-    <h1 class="title">Categories</h1>
-    
-    <div class="entry-content"><ul>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">iOS引导效果</h1>
+	<div class="entry-content" itemprop="articleBody"><p>Onboard只用几行代码让开发者以快速、简捷方式去创造漂亮、吸引人、实用的引导效果。</p>
 
-    <li><a href="/blog/categories/swift开发/">Swift开发</a> [ 1 ]</li>
+<h2>用法</h2>
 
-    <li><a href="/blog/categories/文档翻译/">文档翻译</a> [ 1 ]</li>
+<h3>Cocoapods</h3>
 
-    <li><a href="/blog/categories/ios开发/">Ios开发</a> [ 2 ]</li>
+<h2>指南</h2>
 
-    <li><a href="/blog/categories/ios翻译/">Ios翻译</a> [ 1 ]</li>
+<p>拖入<code>OnboardingViewController</code>和<code>OnboardingContentViewController</code>头文件和实现文件到项目中，在你的<code>AppDelegate</code>中导入，你将会给用户创造一个极好的引导效果。</p>
 
-</ul>
+<h3>Objective-C</h3>
 
+<pre><code>OnboardingContentViewController *firstPage = [[OnboardingContentViewController alloc] initWithTitle:@"Page Title" body:@"Page body goes here." image:[UIImage imageNamed:@"icon"] buttonText:@"Text For Button" action:^{
+// do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+}];
+</code></pre>
+
+<h3>Swift</h3>
+
+<pre><code>let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "Page Title", body: "Page Body.", image: UIImage(named: "icon"), buttonText: "Button Text") {
+// do something here when the user presses the button
+}
+</code></pre>
+
+<p>然后创建</p>
+
+<p><img src="/images/2014/09/18/onboard_demo.gif" alt="image" /></p>
+
+<h2>自定制</h2>
+
+<p><img src="/images/2014/09/18/key.png" alt="image" /></p>
+
+<h2>模糊和遮罩</h2>
+
+<h2>样例</h2>
+
+<p><img src="/images/2014/09/18/space1.png" alt="image" />
+<img src="/images/2014/09/18/space2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/space3.png" alt="image" />
+<img src="/images/2014/09/18/space4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/purple1.png" alt="image" />
+<img src="/images/2014/09/18/purple2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/purple3.png" alt="image" />
+<img src="/images/2014/09/18/purple4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/yellow1.png" alt="image" />
+<img src="/images/2014/09/18/yellow2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/yellow3.png" alt="image" />
+<img src="/images/2014/09/18/yellow4.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/city1.png" alt="image" />
+<img src="/images/2014/09/18/city2.png" alt="image" /></p>
+
+<p><img src="/images/2014/09/18/city3.png" alt="image" /></p>
+
+<h2>注意</h2>
+
+<p>由于目前不支持水平方向引导，所以我建议使用的它应用是仅仅支持竖直方向或者封装它的是一个支持竖直方向<code>UINavigationContoller</code>的子类。</p>
 </div>
+
+
 </article>
 
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
 
@@ -116,7 +178,7 @@
     <h1>Comments</h1>
     <div id="comments" aria-live="polite">
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-title="Categories"></div>
+<div class="ds-thread" data-title="iOS引导效果"></div>
 <script type="text/javascript">
     var duoshuoQuery = {short_name:"dev"};
     (function() {
@@ -130,9 +192,6 @@
     </script>
 <!-- Duoshuo Comment END --></div>
 </section>
-
-
-
 </div>
 			</div>
 			<footer id="footer" class="inner"><p>

@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Mae Blog</title>
+	<title>iOS8界面布局和适配 - Mae Blog</title>
 	<meta name="author" content="maebook">
 
 	
-	<meta name="description" content="Oct 16th, 2014 | Comments iOS8界面布局和适配 一 基本概念： 我们知道，一款iOS应用，其主要UI组件是由一个个相对独立的可视单元构成，这些可视单元有的主要负责向用户输出有用的信息，有些则负责信息的输入（交互），交互的过程中往往还伴随有动画的效果， &hellip;">
+	<meta name="description" content="iOS8界面布局和适配 一 基本概念： 我们知道，一款iOS应用，其主要UI组件是由一个个相对独立的可视单元构成，这些可视单元有的主要负责向用户输出有用的信息，有些则负责信息的输入（交互），交互的过程中往往还伴随有动画的效果，已达到整个信息传递的连贯性以及用户体验的细腻感。可视单元， &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="Mae Blog" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://zhouhongmeiblog.github.io/">
+	<link rel="canonical" href="http://zhouhongmeiblog.github.io/blog/2014/10/16/ios8jie-mian-bu-ju-he-gua-pei/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -87,36 +87,9 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-16T15:46:39+08:00" data-updated="true" itemprop="datePublished">Oct 16<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-</div>
-		
-        
-        | <a href="/blog/2014/10/16/ios8jie-mian-bu-ju-he-gua-pei/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/10/16/ios8jie-mian-bu-ju-he-gua-pei/" itemprop="url">iOS8界面布局和适配</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<h2>一 基本概念：</h2>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">iOS8界面布局和适配</h1>
+	<div class="entry-content" itemprop="articleBody"><h2>一 基本概念：</h2>
 
 <p>我们知道，一款iOS应用，其主要UI组件是由一个个相对独立的可视单元构成，这些可视单元有的主要负责向用户输出有用的信息，有些则负责信息的输入（交互），交互的过程中往往还伴随有动画的效果，已达到整个信息传递的连贯性以及用户体验的细腻感。可视单元，在实际开发中主要是view、button等，那么这些可视单元的关系由两个基本的关系构成：兄弟关系和父子关系，整个视图单元就是一个树形结构：
 <img src="/images/2014/10/16/1.png" alt="image" />
@@ -247,342 +220,48 @@ Autolayout的作用非常明确：帮我们确定在不同设备、不同（父v
 
 <p>Xcode6中Image Asset也支持了Size Class,也就是说,我们可以对不同的Size Class指定不同的图片了。在Image Asset的编辑面板中选择某张图片，Inspector里现在多了一个Width和Height的组合，添加我们需要对应的Size Class，然后把合适的图拖上去，这样在运行时SDK就将从中挑选对应的Size的图进行替换了。支持Size Class的Image Asset编辑效果如下：
 <img src="/images/2014/10/16/10.png" alt="image" /></p>
+</div>
 
-		
-		
-	</div>
 
 </article>
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-18T09:38:56+08:00" data-updated="true" itemprop="datePublished">Sep 18<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/iosfan-yi/'>ios翻译</a>
-
-
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
-		
-        
-        | <a href="/blog/2014/09/18/iosyin-dao-xiao-guo/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/09/18/iosyin-dao-xiao-guo/" itemprop="url">iOS引导效果</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Onboard只用几行代码让开发者以快速、简捷方式去创造漂亮、吸引人、实用的引导效果。</p>
-
-<h2>用法</h2>
-
-<h3>Cocoapods</h3>
-
-<h2>指南</h2>
-
-<p>拖入<code>OnboardingViewController</code>和<code>OnboardingContentViewController</code>头文件和实现文件到项目中，在你的<code>AppDelegate</code>中导入，你将会给用户创造一个极好的引导效果。</p>
-
-<h3>Objective-C</h3>
-
-<pre><code>OnboardingContentViewController *firstPage = [[OnboardingContentViewController alloc] initWithTitle:@"Page Title" body:@"Page body goes here." image:[UIImage imageNamed:@"icon"] buttonText:@"Text For Button" action:^{
-// do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
-}];
-</code></pre>
-
-<h3>Swift</h3>
-
-<pre><code>let firstPage: OnboardingContentViewController = OnboardingContentViewController(title: "Page Title", body: "Page Body.", image: UIImage(named: "icon"), buttonText: "Button Text") {
-// do something here when the user presses the button
-}
-</code></pre>
-
-<p>然后创建</p>
-
-<p><img src="/images/2014/09/18/onboard_demo.gif" alt="image" /></p>
-
-<h2>自定制</h2>
-
-<p><img src="/images/2014/09/18/key.png" alt="image" /></p>
-
-<h2>模糊和遮罩</h2>
-
-<h2>样例</h2>
-
-<p><img src="/images/2014/09/18/space1.png" alt="image" />
-<img src="/images/2014/09/18/space2.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/space3.png" alt="image" />
-<img src="/images/2014/09/18/space4.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/purple1.png" alt="image" />
-<img src="/images/2014/09/18/purple2.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/purple3.png" alt="image" />
-<img src="/images/2014/09/18/purple4.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/yellow1.png" alt="image" />
-<img src="/images/2014/09/18/yellow2.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/yellow3.png" alt="image" />
-<img src="/images/2014/09/18/yellow4.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/city1.png" alt="image" />
-<img src="/images/2014/09/18/city2.png" alt="image" /></p>
-
-<p><img src="/images/2014/09/18/city3.png" alt="image" /></p>
-
-<h2>注意</h2>
-
-<p>由于目前不支持水平方向引导，所以我建议使用的它应用是仅仅支持竖直方向或者封装它的是一个支持竖直方向<code>UINavigationContoller</code>的子类。</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
 
 
 
 
 
 
-
-
-  
-
-
-<time datetime="2014-08-26T17:57:35+08:00" data-updated="true" itemprop="datePublished">Aug 26<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
+<section>
+    <h1>Comments</h1>
+    <div id="comments" aria-live="polite">
+<!-- Duoshuo Comment BEGIN -->
+<div class="ds-thread" data-title="iOS8界面布局和适配"></div>
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"dev"};
+    (function() {
+     var ds = document.createElement('script');
+     ds.type = 'text/javascript';ds.async = true;
+     ds.src = 'http://static.duoshuo.com/embed.js';
+     ds.charset = 'UTF-8';
+     (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+     })();
+    </script>
+<!-- Duoshuo Comment END --></div>
+</section>
 </div>
-		
-        
-        | <a href="/blog/2014/08/26/iosxue-xi-bi-ji-%5Bnil%5Dkai-yuan-kuang-jia-he-lei/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/08/26/iosxue-xi-bi-ji-%5Bnil%5Dkai-yuan-kuang-jia-he-lei/" itemprop="url">iOS学习笔记－开源框架和类</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		
-		
-		<a href="/blog/2014/08/26/iosxue-xi-bi-ji-%5Bnil%5Dkai-yuan-kuang-jia-he-lei/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-23T13:59:37+08:00" data-updated="true" itemprop="datePublished">Jul 23<sup>rd</sup>, 2014</time></div>
-		<div class="tags">
-
-</div>
-		
-        
-        | <a href="/blog/2014/07/23/zipya-suo-he-jie-ya-suo/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/07/23/zipya-suo-he-jie-ya-suo/" itemprop="url">Zip压缩和解压缩</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><img src="/images/2014/07/23/zip.png" alt="image" /></p>
-
-
-		
-		<a href="/blog/2014/07/23/zipya-suo-he-jie-ya-suo/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-03T14:10:19+08:00" data-updated="true" itemprop="datePublished">Jul 3<sup>rd</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ioskai-fa/'>ios开发</a>
-
-
-</div>
-		
-        
-        | <a href="/blog/2014/07/03/distribute-app/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/07/03/distribute-app/" itemprop="url">iOS 测试解决方案</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><img src="/images/2014/07/03/iOS_Test.png" alt="image" /></p>
-
-
-		
-		<a href="/blog/2014/07/03/distribute-app/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-07-02T09:15:48+08:00" data-updated="true" itemprop="datePublished">Jul 2<sup>nd</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/ioskai-fa/'>ios开发</a>
-
-
-</div>
-		
-        
-        | <a href="/blog/2014/07/02/ioszhen-ji-diao-shi/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/07/02/ioszhen-ji-diao-shi/" itemprop="url">iOS真机调试</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><img src="/images/2014/07/02/zhenjicheshi.gif" alt="image" /></p>
-
-
-		
-		<a href="/blog/2014/07/02/ioszhen-ji-diao-shi/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-30T15:10:45+08:00" data-updated="true" itemprop="datePublished">Jun 30<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/wen-dang-fan-yi/'>文档翻译</a>
-
-
-</div>
-		
-        
-        | <a href="/blog/2014/06/30/gitbook/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/06/30/gitbook/" itemprop="url">GitBook</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><img src="/images/2014/06/30/gitbook.png" alt="image" /></p>
-
-
-		
-		<a href="/blog/2014/06/30/gitbook/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-29T15:10:36+08:00" data-updated="true" itemprop="datePublished">Jun 29<sup>th</sup>, 2014</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/swiftkai-fa/'>swift开发</a>
-
-
-</div>
-		
-        
-        | <a href="/blog/2014/06/29/swift/#comments">Comments</a>
-        
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/06/29/swift/" itemprop="url">Swift</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><img src="/images/2014/06/29/swift.png" alt="image" /></p>
-
-
-		
-		<a href="/blog/2014/06/29/swift/" class="more-link">继续阅读 &rarr;</a>
-	</div>
-
-</article>
-
-</div>
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">所有文章</a></div>
-</nav></div>
 			</div>
 			<footer id="footer" class="inner"><p>
 Copyright &copy; 2014 - maebook -
