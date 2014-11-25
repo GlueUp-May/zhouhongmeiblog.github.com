@@ -4,7 +4,7 @@
   <title><![CDATA[Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-10-16T17:32:20+08:00</updated>
+  <updated>2014-11-25T17:10:57+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -12,6 +12,295 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Cocos2D]]></title>
+    <link href="http://zhouhongmeiblog.github.io/blog/2014/11/25/cocos2dsheng-ji/"/>
+    <updated>2014-11-25T14:25:05+08:00</updated>
+    <id>http://zhouhongmeiblog.github.io/blog/2014/11/25/cocos2dsheng-ji</id>
+    <content type="html"><![CDATA[<h3>概述</h3>
+
+<p>cocos2d是一个基于MIT协议的开源框架，用于构建游戏、应用程序和其他图形界面交互应用。可以让你</p>
+
+<p>在创建自己的多平台游戏时节省很多的时间。</p>
+
+<p><code>注：MIT许可证之名源自麻省理工学院（Massachusetts Institute of Technology, MIT）
+</code></p>
+
+<h3>开发环境</h3>
+
+<p>OS X 10.9、Xcode5及以上</p>
+
+<p>需要一个开发者账号，便于真机调试（渲染性能）</p>
+
+<p> <strong>iOS apps </strong>: ios5及以上，iphone,iphone3GS,iPodTouch不支持</p>
+
+<p><strong>OSX apps</strong>:OS X 10.9以上</p>
+
+<h3>特点</h3>
+
+<ol>
+<li><p><strong>易于使用</strong>：游戏开发者可以把关注焦点放在游戏设置本身，而不必消耗大量时间学习晦涩难懂的OpenGL ES，此外，Cocos2D还提供了大量的规范。</p></li>
+<li><p><strong>高效</strong>：Cocos2D基于OpenGL ES进行图形渲染，从而让移动设备的GPU性能发挥到极致。</p></li>
+<li><p><strong>灵活</strong>：方便扩展，易于集成第三方库。</p></li>
+<li><p><strong>免费</strong>：基于MIT协议的免费开源框架，用户可以放心使用，不用担心商业授权的问题。</p></li>
+<li><p><strong>社区支持</strong>：关心Cocos2D的开发者自发建立了多个社区组织，可以方便的查阅各类技术资料。</p></li>
+</ol>
+
+
+<h3>家族成员</h3>
+
+<h4>Cocos2d-x</h4>
+
+<p>Cocos2d-x是一个用C++写跨平台开源游戏框架，它可以用来建立游戏，应用和其他基于跨平台的GUI交</p>
+
+<p>互程序。</p>
+
+<h4>Cocos2d-JS</h4>
+
+<p>Cocos2d-JS 是Cocos2d-x引擎的javascript版本。用一系列简化javascript APIS来支持所有</p>
+
+<p>Cocos2d-x功能。</p>
+
+<h4>Cocos2d-XNA</h4>
+
+<p>Cocos2d-XNA是一个用C#为XNA写的2D/3D游戏框架，它支持MonoGame运行机制。</p>
+
+<h4>Cocos2d-Swift</h4>
+
+<p>Cocos2d-Swift是用Xcode和objective &ndash; c建立一个跨平台2D游戏开源框架。</p>
+
+<h4>Cocos2d(Python)</h4>
+
+<p> Cocos2d(python)项目起源于“Cocos2d”。除了它是用Python编写的，和cocos2d-x一样。它是</p>
+
+<p> 跨平台的:它作用于Windows、Linux和Mac。</p>
+
+<h3>升级</h3>
+
+<h4>V3</h4>
+
+<ol>
+<li><p>Android官方支持，通过Apportable，在iOS和Android 你的项目能够编译不用修改。</p></li>
+<li><p>对API进行整理，他们已经对API中的每个方法进行检查，确保每个方法是一致、有效和最新的。</p></li>
+<li><p>可以从Xcode中得到完整的API文档，我们为新手写了一个用户指南。</p></li>
+<li><p>CCPhysics都是建立在Chipmunk上。</p></li>
+<li><p>改进触摸处理事件。单指和多指触摸到每个节点上。</p>
+
+<pre><code> 注：
+
+ Apportable：他们提供的SDk，可以让Object-C语言写的程序直接在Android平台上
+
+ 运行，也就是说，让你的iOS应用可以移植到Android设备上来。不过，现在，他们还只主要
+
+ 面向移动游戏应用。
+
+ Chipmunk：chipmunk是一个开源2D物理引擎。具有速度快，用起来简单，更轻量级的物理
+
+ 引擎
+
+ 物理引擎：动态移动和静态的刚体
+
+ 它与Box2D的性能比较：
+
+ 编程语言上，Box2D是用C++写的，chipmunk用c写的
+
+ chipmunk用像素作为物理单位，Box2D使用米作为物理单位，显示需要转换屏幕坐标
+
+ Box2D有些功能chipmunk没有（针对快速移动物体），倾向轻量级或者容易上手用
+
+ chipmunk
+
+ chipmunk有一个很受欢饮oc接口，叫做spacemanger，能将精灵添加到刚体上，添加调试 
+
+ 用的绘图。
+</code></pre></li>
+</ol>
+
+
+<h4>V3.1</h4>
+
+<p>3.1版本有两大特性，物理引擎进行新的渲染和改进，新的渲染完全重写所有旧的OpenGL代码，它向后</p>
+
+<p>兼容3.0API，除非你在游戏中自定义OpenGL代码，在这种情况下，你需要做些较小调整。</p>
+
+<p>(1)新渲染器有很大的性能改进,也使得所有批处理自动绘图和可见性扑杀你。不再有任何需要批处理节</p>
+
+<p>点(尽管他们仍在代码中保持向后兼容性）。</p>
+
+<p>(2)在物理引擎方面,现在可以将物理与行动和动画。通过物理模拟动画节点将正确地传输能量节点,这使</p>
+
+<p> 得它更加简单和直观的建立任何类型的游戏,使用物理。</p>
+
+<h4>V3.2</h4>
+
+<p><a href="https://www.makegameswith.us/gamernews/402/cocos2d-32-with-cceffects-is-coming">CCEffects</a>:就像一个过滤器，你能应用到你游戏中任何精灵甚至更大区域通过使用CCEffectNode.</p>
+
+<p>介绍CCEffects中的各种类可以从<a href="https://www.makegameswith.us/gamernews/402/cocos2d-32-with-cceffects-is-coming">CCEffects API</a>中了解.</p>
+
+<h4>V3.3</h4>
+
+<ol>
+<li><p>充分利用强大苹果新的API，批处理渲染</p></li>
+<li><p>Packages, allowing you to deliver server-based game content.</p>
+
+<p>很大改进对android支持</p></li>
+<li><p>Lots of new and advanced effects with the CCEffects API.</p></li>
+</ol>
+
+
+<h3>SpriteBuiler</h3>
+
+<h4>安装</h4>
+
+<p>你可以免费从Mac App Store下载SpriteBuilder,有经验开发者可以构建SpriteBuilder资源。</p>
+
+<h4>开始</h4>
+
+<p>点击下载SpriteBuilder.app,第一次打开会出现一个空的SpriteBuilder窗口，它是一个不活跃的</p>
+
+<p>项目因此所有的接口是不可用的。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder1.png" alt="image" /></p>
+
+<h4>创建新项目</h4>
+
+<p>在SpriteBuilder菜单中选择<code>File =&gt; New =&gt; Project...</code> 会出现对话框，为项目命名和选oc或者swift作为项目的主要语言。</p>
+
+<p>点击<code>Save</code>当你给你第一个项目合适名字。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder2.png" alt="image" /></p>
+
+<h4>使用</h4>
+
+<p><a href="https://www.makegameswith.us/docs/#!/cocos2d/1.0/spritebuilder-ui">SpriteBuilder-UI</a>划分四个区域</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder6.png" alt="image" /></p>
+
+<ol>
+<li><p>资源/组件浏览器：在这里，您可以看到您所创建或添加到您的项目中的不同的资源和场景。您还可以选择不同类型的节点（Nodes）并将其拖动到场景中。</p></li>
+<li><p>第一阶段：该阶段将预览您的当前场景。在这里，你可以安排属于一个场景的所有节点。</p></li>
+<li><p>时间轴：时间轴用于在SpriteBuilder中创建动画。更多的时间轴细节我们将在以后详细讨论。</p></li>
+<li><p>详情查看：一旦你选择场景中的节点，这个细节视图将显示大量关于该节点可编辑的信息。您可以修改位置，内容（例如一个标签的文本）和物理性质等。</p></li>
+</ol>
+
+
+<p><strong>文件视图</strong></p>
+
+<p>在资源/组件的浏览器（标记为上图中第1节）第一个标签代表的文件视图。它会列出您已经添加的所</p>
+
+<p>有.ccb文件和资源。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder7.png" alt="image" /></p>
+
+<p>在这个视图中，您可以添加新的资源和调整项目中的文件夹层次结构。</p>
+
+<p><strong>节点库</strong></p>
+
+<p>第三个选项卡是节点库：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder8.png" alt="image" /></p>
+
+<p>此面板显示了你可以用于构建游戏场景和菜单的所有可用的节点类型。</p>
+
+<p><strong>检阅栏</strong></p>
+
+<p>在详细信息视图（标记为上图中第4节）的第一个选项卡是检阅栏，一旦在你选中了一个场景中的对象的</p>
+
+<p>时候，你可以使用这个面板来修改它的许多特性，如位置和颜色：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder9.png" alt="image" /></p>
+
+<p><strong>代码连接</strong></p>
+
+<p>在右侧面板中的第二个选项卡让您能够管理您选择的节点的代码连接。你可以在这里做的是为您的节点设</p>
+
+<p>置自定义的Objective-C类（设置类名）：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder10.png" alt="image" /></p>
+
+<h4>发布项目</h4>
+
+<p>SpriteBuilder窗口几乎显示是一个空项目，为了发布这个工程，点击最左上角发布按钮。只要项目发</p>
+
+<p>布，你就可以打开xcode.</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder3.png" alt="image" /></p>
+
+<h4>使用SpriteBuilder管理资源</h4>
+
+<p><strong>导入资源</strong></p>
+
+<p>拖动解压的PeevedPenguinsAssets文件夹到资源窗格（MainScene.ccb下的空的空间）。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder11.png" alt="image" /></p>
+
+<p><strong>调整自动缩放设置</strong></p>
+
+<p>如果你看了资源文件夹中的图片资源，你会发现每个图像只提供一套资源而不是为视网膜和非视网膜设备</p>
+
+<p>分别提供单独的资源。这是可能的，因为Spritebuilder支持自动缩放。</p>
+
+<p>由于SpriteBuilder的自动缩放你只需要提供最高分辨率的图像， SpriteBuilder将自动生成低分</p>
+
+<p>辨率的图像。如果你之前已经用了cocos2d，这意味着没有更多的定期和高清文件！</p>
+
+<p>SpriteBuilder设置默认情况下，从4倍分辨率（视网膜图像的双精度）缩减资源。 Peeved</p>
+
+<p>Penguins项目提供2倍高清资源（视网膜分辨率）, 所以我们必须改变我们的项目此设置。打开文件></p>
+
+<p>项目设置和更改默认缩放2倍（phonehd）：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder12.png" alt="image" /></p>
+
+<p>现在，当您通过SpriteBuilder发布，它会自动生成非视网膜iPhone资源。</p>
+
+<p><strong>启用Smart Sprite Sheet</strong></p>
+
+<p>SpriteBuilder还有一个很好的功能，你应该在你的游戏使用：Smart Sprite Sheets。当您使用</p>
+
+<p>Smart Sprite Sheets，SpriteBuilder会为所有资源自动生成一个大的图像。这使得该设备中的</p>
+
+<p>所有资源将被一次装入内存中，加快游戏的运行速度。</p>
+
+<p>先将Peeved Penguins中的所有资源转换成Smart Sprite Sheets。你需要右键单击到该文件夹并</p>
+
+<p>选择Make Smart Sprite Sheet：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder13.png" alt="image" /></p>
+
+<p>在这之后你的文件夹的图标应该成为粉红色。现在，点击发布按钮。此时将产生你的Smart Sprite</p>
+
+<p>Sheets。如果一切正常了，你会看到你的精灵表的一个很好的预览效果，你可以在资源窗格中选择它：</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder14.png" alt="image" /></p>
+
+<h4>打开Xocde项目</h4>
+
+<p>你可以从菜单中选<code>File =&gt; Open Project in Xcode</code>，或者按<code>Shift+Cmd+O</code>，如果xocde项</p>
+
+<p>目已经打开，它会把相关的xcode窗口带到最前面。</p>
+
+<h4>构建和运行</h4>
+
+<p>在Xcode中点击左上角的<code>Run</code>按钮去构建和运行项目。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder4.png" alt="image" /></p>
+
+<p>恭喜你，你已经成功创建了你的第一个SpriteBuilder应用。</p>
+
+<p><img src="http://zhouhongmeiblog.github.io/images/2014/11/25/SpriteBuilder5.png" alt="image" /></p>
+
+<h3>Cocos2D</h3>
+
+<pre><code>警告：如果你不想使用SpriteBuilder，你不得不写代码为每件事和手工管理资源。
+</code></pre>
+
+<h4>安装</h4>
+
+<p>你可以从<a href="http://www.cocos2d-swift.org/download">cocos2d</a>官网下载一个最近版本的zip包或者<a href="https://www.makegameswith.us/docs/#!/docs/1.3/develop/cocos2d-build-from-sources">GitHub</a>。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[iOS8界面布局和适配]]></title>
