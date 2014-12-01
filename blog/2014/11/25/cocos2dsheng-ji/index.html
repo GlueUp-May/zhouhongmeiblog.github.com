@@ -156,7 +156,13 @@
 <li><p>对API进行整理，他们已经对API中的每个方法进行检查，确保每个方法是一致、有效和最新的。</p></li>
 <li><p>可以从Xcode中得到完整的API文档，我们为新手写了一个用户指南。</p></li>
 <li><p>CCPhysics都是建立在Chipmunk上。</p></li>
-<li><p>改进触摸处理事件。单指和多指触摸到每个节点上。</p>
+<li><p>改进触摸处理事件。单指和多指触摸到每个节点上（UITouch 变成了 CCTouch）。</p>
+
+<p> 触摸处理是在CCNode上，self.userInteractionEnabled = TRUE</p>
+
+<p>CGPoint touchLocation = [touch locationInNode:self];</p>
+
+<p>具体实现：<a href="https://www.makeschool.com/gamernews/366/touch-handling-in-cocos2d-30">touch-handling</a></p>
 
 <pre><code> 注：
 
@@ -182,10 +188,26 @@
 
  chipmunk
 
- chipmunk有一个很受欢饮oc接口，叫做spacemanger，能将精灵添加到刚体上，添加调试 
+ chipmunk有一个很受欢迎oc接口，叫做spacemanger，能将精灵添加到刚体上，添加调试 
 
  用的绘图。
 </code></pre></li>
+<li><p>CCLayer不再存在，CCLayer曾经用于与用户交互的场景类。在3.x版本任何CCNode能够处理触摸</p></li>
+</ol>
+
+
+<p>输入。CCNode是新的CCLayer。场景中使用CCScene都是继承CCNode。</p>
+
+<ol>
+<li>CCMenu再见，你好CCLayout!过去是用CCMenu创建菜单，现在用CCLayout能布局任何CCNode,</li>
+</ol>
+
+
+<p>你只要使用CCLayout容器和增加CCButton.</p>
+
+<ol>
+<li><p>v2.每帧实现更新方法需要两步走，v3.你不需要实现scheduleUpdate方法。</p></li>
+<li><p>用CMMotionManager取代了老UIAccelerometerDelegate.</p></li>
 </ol>
 
 
@@ -202,6 +224,8 @@
 <p>(2)在物理引擎方面,现在可以将物理与行动和动画。通过物理模拟动画节点将正确地传输能量节点,这使</p>
 
 <p> 得它更加简单和直观的建立任何类型的游戏,使用物理。</p>
+
+<p> 3.1使用新的GLKit.framework库用于做math运算</p>
 
 <h4>V3.2</h4>
 
@@ -220,7 +244,63 @@
 </ol>
 
 
+<p>//在AppDelegate
+[CCBReader configureCCFileUtils]</p>
+
 <h3>SpriteBuiler</h3>
+
+<p>SpriteBuilder的前身是大名鼎鼎的cocosBuilder，是cocos2d下进行精灵，层，场景布局的简单</p>
+
+<p>快速的可视化的开发工具。SpriteBuilder在继承了cocosBuilder后，提供了更多的新特性，比如改</p>
+
+<p>良了资源的处理，更好地支持不同的分解，物理，语言等。</p>
+
+<p>SpriteBuilder的主要目标是提供类似于Xcode故事板的cocos2d的游戏快速开发工具。</p>
+
+<p>SpriteBuilder是一个可视化编辑器，允许您快速创建cocos2d的游戏。它可以让你通过拖放不同的组</p>
+
+<p>件来创建用户界面（user interfaces），游戏场景(gameplay scenes)和级别（levels）的接口</p>
+
+<p>文件和设置它们的位置。这样比在代码中定位每一个元素的屏幕位置要节省大量的时间。</p>
+
+<p>SpriteBuilder的该核心功能工具包括管理你的Assets，创建动画，音频效果和粒子效果。</p>
+
+<h4>工作流程</h4>
+
+<p>当你要在你的游戏项目中使用SpriteBuilder，你要先创建一个新的SpriteBuilder项目，而不是一</p>
+
+<p>个Xcode项目。当创建一个SpriteBuilder项目，SpriteBuilder将为你创建和维护一个嵌入式的</p>
+
+<p>Xcode项目。在SpriteBuilder项目中，你能能管理你的游戏项目中所有的resources和assets。在</p>
+
+<p>你的游戏中，您将为不同的场景（scenes）创建相应的接口文件（interface files）。接口文件</p>
+
+<p>（interface files）将被.ccb文件（.ccb是SpriteBuilder的前身CocosBuilder命名而来的）</p>
+
+<p>调用。SpriteBuilder还允许您创建代码连接，通过代码连接，您可以创建.ccb 文件和Objective-</p>
+
+<p>C 类之间的联系。这意味着您可以在SpriteBuilder和在代码中为你的游戏对象添加行为-我们将在后</p>
+
+<p>面深入讨论这个概念。</p>
+
+<!--一般的，SpriteBuilder的工作流程看起来像这样：
+
+在SpriteBuilder中创建一个新项目
+
+将图像和其他资源添加到您的SpriteBuilder项目中
+
+在你的游戏项目中为不同的场景（scenes）和物体（objects）创建多个.ccb文件
+
+添加代码连接来扩展这些场景（scenes）和物体（objects）的行为
+
+在SpriteBuilder中发布您的项目。这将更新你的Xcode项目链接的SpriteBuilder项目
+
+从Xcode中运行你的游戏-->
+
+
+<p>原理：</p>
+
+<p>CCB Files &ndash; CCB Reader &ndash; CCScene/CCNode</p>
 
 <h4>安装</h4>
 
@@ -370,6 +450,46 @@
 <h4>安装</h4>
 
 <p>你可以从<a href="http://www.cocos2d-swift.org/download">cocos2d</a>官网下载一个最近版本的zip包或者<a href="https://www.makegameswith.us/docs/#!/docs/1.3/develop/cocos2d-build-from-sources">GitHub</a>。</p>
+
+<ul>
+<li> Scene management (workflow)</li>
+<li> Transitions between scenes</li>
+<li> Sprites and Sprite Sheets</li>
+<li> Effects: Lens, Ripple, Waves, Liquid, etc.</li>
+<li> Actions (behaviours):
+
+<ul>
+<li>Trasformation Actions: Move, Rotate, Scale, Fade, Tint, etc.</li>
+<li>Composable actions: Sequence, Spawn, Repeat, Reverse</li>
+<li>Ease Actions: Exp, Sin, Cubic, Elastic, etc.</li>
+<li>Misc actions: CallFunc, OrbitCamera, Follow, Tween</li>
+</ul>
+</li>
+<li> Basic menus and buttons</li>
+<li> Integrated with [Chipmunk][6] physics engine</li>
+<li> Particle system</li>
+<li> Fonts:
+
+<ul>
+<li>Fast font rendering using Fixed and Variable width fonts</li>
+<li>Support for .ttf fonts</li>
+</ul>
+</li>
+<li> Tile Map support: Orthogonal, Isometric and Hexagonal</li>
+<li> Parallax scrolling</li>
+<li> Motion Streak</li>
+<li> Render To Texture</li>
+<li> Touch/Accelerometer on iOS</li>
+<li> Touch/Mouse/Keyboard on Mac</li>
+<li> Sound Engine support (CocosDenshion library) based on OpenAL</li>
+<li> Integrated Slow motion/Fast forward</li>
+<li> Fast textures: PVR compressed and uncompressed textures</li>
+<li> Point based: RetinaDisplay mode compatible</li>
+<li> Language: Objective-C</li>
+<li> Open Source Commercial Friendly: Compatible with open and closed source projects</li>
+<li> OpenGL ES 2.0 (iOS) / OpenGL 2.1 (Mac) based</li>
+</ul>
+
 </div>
 
 
