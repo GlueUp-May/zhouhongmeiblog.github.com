@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ios游戏开发 | Mae Blog]]></title>
   <link href="http://zhouhongmeiblog.github.io/blog/categories/iosyou-xi-kai-fa/atom.xml" rel="self"/>
   <link href="http://zhouhongmeiblog.github.io/"/>
-  <updated>2014-12-01T10:25:30+08:00</updated>
+  <updated>2014-12-02T22:33:17+08:00</updated>
   <id>http://zhouhongmeiblog.github.io/</id>
   <author>
     <name><![CDATA[maebook]]></name>
@@ -139,7 +139,7 @@
 
 <ol>
 <li><p>v2.每帧实现更新方法需要两步走，v3.你不需要实现scheduleUpdate方法。</p></li>
-<li><p>用CMMotionManager取代了老UIAccelerometerDelegate.</p></li>
+<li><p>用CMMotionManager取代了老UIAccelerometerDelegate.／cm是什么？</p></li>
 </ol>
 
 
